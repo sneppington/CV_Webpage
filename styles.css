@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+#main {
+    position: absolute;
+    color: rgba(233, 233, 233, 0.885);
+    opacity: 0;
+    z-index: -2;
+}
+
+#background-load-video {
+    height: 117vh; 
+    width: 117%; 
+    object-fit: fill; 
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s, opacity cubic-bezier(0.075, 0.82, 0.165, 1) 9s;
+}
+
+#loading-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s, opacity cubic-bezier(0.075, 0.82, 0.165, 1) 9s;
+}
+
+#loader {
+    border: 5px solid rgba(233, 233, 233, 0.885);
+    height: 20px;
+    width: 20vw;
+    padding: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#loader div {
+    height: 80%;
+    width: 10.5%;
+    background-color: rgba(233, 233, 233, 0.885);
+    margin: 1%;
+}
+
+#background {
+    width: 85vw; 
+    height: 85vh; 
+    position: absolute;
+    opacity: 0.3;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 3s 
+}
+
+#themes-wrapper {
+    position: absolute;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 2s 
+}
+
+.theme-card {
+    position:  absolute;
+    border: 5px rgba(233, 233, 233, 0.885) solid;
+    background-color: black;
+    height: 90px;
+    width: 90px;
+}
+
+.theme-card:hover {
+    background-color: rgba(233, 233, 233, 0.06);
+}
+
+.theme-card:hover .theme-card-title {
+    width: 85px;
+}
+
+.theme-card-title {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(233, 233, 233, 0.885);
+    color: black;
+    transform: translate(95px, -5px);
+    width: 0px;
+    height: 30px;
+    overflow: hidden;
+    transition: width cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s
+}
+
+.window-border {
+    pointer-events: none;
+    position: absolute;
+    width: calc(100vw - 6px);
+    height: calc(100vh - 6px);
+    border: 3px rgba(233, 233, 233, 0.885) solid;
+}
+
+.theme-window {
+    width: 0px;
+    height: 0px;
+    transform: translate(-1px, 5px);
+    position: absolute;
+    overflow: hidden;
+    background-color: black;
+    border: 3px rgba(233, 233, 233, 0.885) solid;
+    transition: width cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s, height cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s, transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+.window-top {
+    background-color: rgba(233, 233, 233, 0.885);
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+}
+
+.close-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform: translate(calc(100vw - 70px), 10px);
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
+}
+
+.close-button:hover {
+    background-color: rgba(138, 0, 0, 0.929);
+}
+
+.close-1 {
+    position: absolute;
+    height: 4px;
+    width: 35px;
+    background-color: rgba(233, 233, 233, 0.885);
+    rotate: 45deg;
+    transition: width cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, height cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+}
+
+.close-2 {
+    position: absolute;
+    height: 4px;
+    width: 35px;
+    background-color: rgba(233, 233, 233, 0.885);
+    rotate: -45deg;
+    transition: width cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, height cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+}
+
+.close-button:hover .close-1 {
+    height: 5px;
+    width: 40px;
+}
+
+.close-button:hover .close-2 {
+    height: 5px;
+    width: 40px;
+}
+
+.close-left {
+    height: 100px;
+    width: 200px;
+    position: absolute;
+}
+
+.close-right {
+    height: 100px;
+    width: 200px;
+    transform: translate(calc(100vw - 200px), 10px);
+    position: absolute;
+}
+
+@media (max-width: 1000px) {
+    #loader {
+        border: 5px solid rgba(233, 233, 233, 0.885);
+        height: 20px;
+        width: 50vw;
+        padding: 2px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #background-load-video {
+        height: 128vh; 
+        width: 128%; 
+        object-fit: fill; 
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 3s, opacity cubic-bezier(0.075, 0.82, 0.165, 1) 9s;
+    }
+}
