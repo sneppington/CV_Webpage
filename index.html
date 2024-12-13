@@ -221,8 +221,8 @@
                 element.style.width = "0px"
                 element.style.height = "0px"
                 element.style.transform = "translate(-1px, 5px)"
-                let newDiv = themeWindow.querySelector(".close-left").cloneNode(true)
-                themeWindow.querySelector(".close-left").parentNode.replaceChild(newDiv, themeWindow.querySelector(".close-left"))
+                let newDiv = element.querySelector(".close-left").cloneNode(true)
+                element.querySelector(".close-left").parentNode.replaceChild(newDiv, themeWindow.querySelector(".close-left"))
             })
         });
 
