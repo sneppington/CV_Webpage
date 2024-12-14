@@ -222,7 +222,7 @@
                 element.style.height = "0px"
                 element.style.transform = "translate(-1px, 5px)"
                 let newDiv = element.querySelector(".close-left").cloneNode(true)
-                element.querySelector(".close-left").parentNode.replaceChild(newDiv, themeWindow.querySelector(".close-left"))
+                element.querySelector(".close-left").parentNode.replaceChild(newDiv, element.querySelector(".close-left"))
             })
         });
 
