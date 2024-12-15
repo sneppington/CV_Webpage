@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: 'Ubuntu', sans-serif;">
+<body style="font-family: 'SquaredFont'">
     <img src="Storage/overlay.png" style="pointer-events: none; position: absolute; width: 100vw; height: 100vh; object-fit: fill; opacity: 0.1; z-index: 1;">
     <div style="pointer-events: none; display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; position: absolute; overflow: hidden;">
         <video id="background-load-video" autoplay muted loop>
@@ -15,7 +15,7 @@
         Your browser does not support the video tag.
         </video>
         <div id="loading-wrapper">
-            <span id="loading-text" style="font-family: 'Ubuntu', sans-serif; color: rgba(233, 233, 233, 0.885); margin-bottom: 1vw; font-size: calc(15px + 1vw * 0.5);">
+            <span id="loading-text" style="font-family: 'SquaredFont'; color: rgba(233, 233, 233, 0.885); margin-bottom: 1vw; font-size: calc(15px + 1vw * 0.5);">
                 Loading
             </span>
             <div id="loader">
@@ -31,7 +31,7 @@
         <div id="themes-wrapper">
             <div style="display: flex; flex-direction: column; gap: 10vh; align-items: center; justify-content: center; position: absolute; width: 100vw; height: 100vh;">
                 <div id="who" class="theme-card" style="transform: translate(-15vw, 0px); position: relative;">
-                    <div id="who" class="theme-card-title">
+                    <div class="theme-card-title">
                         <div style="white-space: nowrap; width: auto; margin: 5px;">
                             <b>Who</b>
                         </div>
@@ -39,7 +39,7 @@
                     <img src="Storage/userIcon.svg" style="width: 100%; height: 100%;">
                 </div>
                 <div id="skills" class="theme-card" style="transform: translate(18vw, -20px); position: relative;">
-                    <div id="who" class="theme-card-title">
+                    <div class="theme-card-title">
                         <div style="white-space: nowrap; width: auto; margin: 5px;">
                             <b>Skills</b>
                         </div>
@@ -52,7 +52,7 @@
                     </svg>
                 </div>
                 <div id="projects" class="theme-card" style="transform: translate(-11vw, 30px); position: relative;">
-                    <div id="who" class="theme-card-title">
+                    <div class="theme-card-title">
                         <div style="white-space: nowrap; width: auto; margin: 5px;">
                             <b>Projects</b>
                         </div>
@@ -74,6 +74,9 @@
                         <div class="close-1"></div>
                         <div class="close-2"></div>
                     </div>
+                </div>
+                <div style="margin-top: 10px; margin-left: 30px; margin-right: 30px; font-family: SquaredFont;">
+                    meow mrooow
                 </div>
             </div>
             <div id="skills-theme" class="theme-window">
@@ -126,8 +129,8 @@
                 loadBar.innerHTML += "<div></div>"
                 loadCount++
 
-                if (loadCount / 8 !== 2) {
-                //if (false) {
+                //if (loadCount / 8 !== 2) {
+                if (false) {
                     loadInPage()
                 } else {
                     setTimeout(() => {
@@ -197,6 +200,14 @@
         });
 
         [[document.querySelector("#who"), whoTheme], [document.querySelector("#skills"), skillsTheme], [document.querySelector("#projects"), projectsTheme]].forEach(element => {
+            element[0].addEventListener("mouseenter", () => {
+                let length = `${10+(element[0].querySelector(".theme-card-title").querySelector("div").getBoundingClientRect().width)}px`
+                element[0].querySelector(".theme-card-title").style.width = length
+            })
+            element[0].addEventListener("mouseleave", () => {
+                element[0].querySelector(".theme-card-title").style.width = "0px"
+            })
+            
             element[0].addEventListener("click", () => {
             element[1].style.width = "calc(100vw - 6px)"
             element[1].style.height = "calc(100vh - 6px)"

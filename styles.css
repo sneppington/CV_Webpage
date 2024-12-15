@@ -5,6 +5,11 @@ body {
     background-color: black;
 }
 
+@font-face {
+    font-family: 'SquaredFont';
+    src: url('./Storage/fonts/UssDallasTitle-R9vlo.otf') format('truetype');
+}
+
 #main {
     position: absolute;
     color: rgba(233, 233, 233, 0.885);
@@ -72,10 +77,6 @@ body {
 
 .theme-card:hover {
     background-color: rgba(233, 233, 233, 0.06);
-}
-
-.theme-card:hover .theme-card-title {
-    width: 85px;
 }
 
 .theme-card-title {
